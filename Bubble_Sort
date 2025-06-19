@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define TAMANHO 10
+void bolha (int *v);
+void imprime_vetor(int *v);
+
+int main(void) {
+  int vetor[TAMANHO] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+  bolha(vetor);
+  imprime_vetor(vetor);
+
+  
+  return 0;
+}
+
+void bolha (int *v) {
+  int troca=1;
+  int i=0;
+  int aux;
+  while (troca) {
+    troca = 0;
+    while (i < TAMANHO - 1) {
+      if (v[i] > v[i+1]) {
+        aux = v[i];
+        v[i] = v[i+1];
+        v[i+1] = aux;
+        troca = 1;
+      }
+      i++;
+    }
+    i = 0;
+  }
+}	
+
+
+ void imprime_vetor(int *v){
+   int i;
+
+   for(i=0;i<TAMANHO;i++){
+     printf(" %d",v[i]);
+   }
+ }
