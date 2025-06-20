@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+#define TAMANHO 10
+void selecao (int *v);
+void imprime (int *v);
+
+
+int main(void) {
+  int v[TAMANHO] = {10,9,8,7,6,5,4,3,2,1};
+  selecao (v);
+  imprime(v);
+  
+  return 0;
+}
+
+
+
+void selecao (int *v)
+{
+    int i,j,aux;
+    for (i=0; i < TAMANHO-1; i++)
+    {
+        for (j=i+1; j < TAMANHO; j++)
+        {
+            if (v[i] > v[j])
+            {
+                aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }
+        }
+    }
+}
+
+void imprime (int *v){
+    int i;
+    for (i=0; i < TAMANHO; i++){
+        printf(" %d ", v[i]);
+    }
+}
